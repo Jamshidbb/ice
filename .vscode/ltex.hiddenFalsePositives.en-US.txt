@@ -1,0 +1,2 @@
+{"rule":"ENGLISH_WORD_REPEAT_BEGINNING_RULE","sentence":"^\\QIn rows 2 and 4 we have target distribution with high variance and as it it obvious from the figure the model is resenting to fit fuurther more to the data.\\E$"}
+{"rule":"EN_UNPAIRED_BRACKETS","sentence":"^\\QItems with same author is shown in –\"\\E$"}

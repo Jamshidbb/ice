@@ -1,0 +1,15 @@
+node_modules/
+
+.DS_Store
+/*-lock.json
+__pycache__
+logs/
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.synctex.gz
+*.out
+*.blg
+*.bbl
+*.map

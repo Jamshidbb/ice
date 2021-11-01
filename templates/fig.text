@@ -1,0 +1,11 @@
+\documentclass[tikz]{standalone}
+\usepackage{pgfplots}
+\usepgfplotslibrary{groupplots} 
+\usepackage{../groupplot}
+\pgfplotstableread[col sep=comma]{
+    loss, sigma, file, step
+    $rows
+}\files
+\begin{document}
+      \fitplot{$columns}{$rows_count}{0,...,$length}{\files}
+\end{document}

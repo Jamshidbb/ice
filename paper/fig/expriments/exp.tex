@@ -1,0 +1,25 @@
+\documentclass[tikz]{standalone}
+\usepackage{pgfplots}
+\usepgfplotslibrary{groupplots} 
+\usepackage{../groupplot}
+\pgfplotstableread[col sep=comma]{
+    loss, sigma, file, step
+    ICE, 1, 1_2999.csv, 3000
+	ICE, 1, 1_14999.csv, 15000
+	ICE, 1, 1_29999.csv, 30000
+	ICE, 4.2, 4_2999.csv, 3000
+	ICE, 4.2, 4_14999.csv, 15000
+	ICE, 4.2, 4_29999.csv, 30000
+	ICE, 4.5, 5_2999.csv, 3000
+	ICE, 4.5, 5_14999.csv, 15000
+	ICE, 4.5, 5_29999.csv, 30000
+	ICE, 5, 6_2999.csv, 3000
+	ICE, 5, 6_14999.csv, 15000
+	ICE, 5, 6_29999.csv, 30000
+	MSE, 3, 7_2999.csv, 3000
+	MSE, 3, 7_14999.csv, 15000
+	MSE, 3, 7_29999.csv, 30000
+}\files
+\begin{document}
+      \fitplot{3}{5}{0,...,14}{\files}
+\end{document}

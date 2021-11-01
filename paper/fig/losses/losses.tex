@@ -1,0 +1,13 @@
+\documentclass[tikz]{standalone}
+\usepackage{pgfplots}
+\usepgfplotslibrary{groupplots} 
+\usepackage{../lossplot}
+\pgfplotstableread[col sep=comma]{
+    loss, sigma, run
+    ICE, 1, 1
+	ICE, 4.5, 5
+	ICE, 5, 6
+}\files
+\begin{document}
+      \fitplot{2}{3}{0,...,2}{\files}
+\end{document}

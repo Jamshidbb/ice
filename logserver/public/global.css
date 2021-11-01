@@ -1,0 +1,106 @@
+:root {
+	--grid-gap: 15px;
+  }
+  
+  * {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+  }
+  
+  :before,
+  :after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+  }
+  
+  body {
+	margin: 20px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	line-height: 1.42857143;
+	background-color: floralwhite;
+  }
+  
+  a {
+	color: #428bca;
+	text-decoration: none;
+  }
+  
+  hr {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	border: 0;
+	border-top: 1px solid #eee;
+  }
+  
+  h1,
+  h2,
+  h3 {
+	margin-top: 20px;
+	margin-bottom: 10px;
+  }
+  
+  h4,
+  h5,
+  h6 {
+	margin-top: 10px;
+	margin-bottom: 10px;
+  }
+  
+  h1 {
+	font-size: 36px;
+  }
+  
+  h2 {
+	font-size: 30px;
+  }
+  
+  h3 {
+	font-size: 24px;
+  }
+  
+  h4 {
+	font-size: 18px;
+  }
+  
+  h5 {
+	font-size: 14px;
+  }
+  
+  h6 {
+	font-size: 12px;
+  }
+  
+  .container {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	overflow: auto;
+	margin: 20px;
+  }
+  
+  /* GRID */
+  
+  .grid {
+	display: grid;
+	grid-auto-flow: row;
+	align-items: start;
+  }
+  
+  @media (min-width: 768px) {
+	.grid {
+	  grid-gap: var(--grid-gap);
+	}
+
+	.grid-simple-col-4 {
+		grid-template-columns: repeat(4, 1fr);
+		grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+	}  
+  }
+
+
+

@@ -1,0 +1,33 @@
+\newcommand{\getfield}[4]{
+  \pgfplotstablegetelem{#2}{#3}\of{#1}%
+  \edef#4{\pgfplotsretval}
+}
+
+% \pgfplotsset{
+%   every axis/.append style={
+%     scale only axis,
+%     axis on top,
+%     height=10cm,
+%     width=10cm
+%   }
+% }
+\newcommand{\fitplot}[4]{
+    \begin{tikzpicture}
+        \begin{groupplot}[group style={group size=#1 by #2},
+          try min ticks=2,
+          max space between ticks=50]
+          \pgfplotsforeachungrouped \i in {#3}{
+              \getfield{#4}{\i}{sigma}{\s}
+              \getfield{#4}{\i}{loss}{\l}
+              \getfield{#4}{\i}{step}{\t}
+              \getfield{#4}{\i}{file}{\file}
+              \edef\temp{
+                \noexpand\nextgroupplot[title={$\sigma_1$ = \s, Step=\t, Loss = \l}]
+                \noexpand\addplot[teal, only marks, fill opacity = 0.1] table [x=x, y=y, col sep=comma] {data/points.csv};
+                \noexpand\addplot[red, no markers] table [x=x, y=y, col sep=comma] {data/\file};
+                } % Contour plot
+              \temp
+          }
+        \end{groupplot}
+      \end{tikzpicture}
+}

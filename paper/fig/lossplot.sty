@@ -1,0 +1,26 @@
+\newcommand{\getfield}[4]{
+  \pgfplotstablegetelem{#2}{#3}\of{#1}%
+  \edef#4{\pgfplotsretval}
+}
+
+
+\newcommand{\fitplot}[4]{
+    \begin{tikzpicture}
+        \begin{groupplot}[group style={group size=#1 by #2},
+          try min ticks=2,
+          max space between ticks=50]
+          \pgfplotsforeachungrouped \i in {#3}{
+              \getfield{#4}{\i}{sigma}{\s}
+              \getfield{#4}{\i}{loss}{\l}
+              \getfield{#4}{\i}{run}{\r}
+              \edef\temp{
+                \noexpand\nextgroupplot[title={$\sigma_1$ = \s, Loss = \l}]
+                \noexpand\addplot[teal, no markers, fill opacity = 0.1] table [x=x, y=y, col sep=comma] {data/iceloss_\r.csv};
+                \noexpand\nextgroupplot[title={$\sigma_1$ = \s, Loss = MSE}]
+                \noexpand\addplot[blue, no markers] table [x=x, y=y, col sep=comma] {data/mseloss_\r.csv};
+                } % Contour plot
+              \temp
+          }
+        \end{groupplot}
+      \end{tikzpicture}
+}
