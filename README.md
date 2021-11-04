@@ -13,8 +13,8 @@ theoretically and experimentally that this will help us to have
 control over overfitting, which is not directly possible with former
 method.
 
-<center><img src="./templates/loss.PNG" ...></center>
-<center><img src="./templates/fitting.PNG" ...></center>
+<center><img src="./templates/loss.png" ...></center>
+<center><img src="./templates/fitting.png" ...></center>
 ## Install the dependencies
 
 Install pytorch https://pytorch.org/get-started/locally/
